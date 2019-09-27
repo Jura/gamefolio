@@ -1,4 +1,42 @@
 @charset 'utf-8';
 
 @import 'normalize';
-@import 'style';
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.pixel {
+  font-family: 'VT323', monospace;
+}
+
+$bg-url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC";
+$bg-width: 50px;
+$bg-height: 50px;
+
+main {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+#scene {
+  width: 300vw;
+  height: 100vh;
+  position: absolute;
+  background: url($bg-url) repeat 0 0;
+  transform: translateX(-50%);
+  transition: transform 1s;
+}
+
+#mk {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1,1);
+  transition: transform 1s;
+  &.forward {
+    transform: translate(-50%,-50%) scale(-1,1);
+  }
+}
