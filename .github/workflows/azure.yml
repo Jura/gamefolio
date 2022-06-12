@@ -36,9 +36,9 @@ jobs:
           # The work item type name - e.g. User Story
           type: User Story
           # Title of the work item
-          title: Integrate Design System release ${{ github.event.name }} ${{ github.event.html_url }} 
+          title: Integrate Design System release ${{ github.event.release.name }} ${{ github.event.release.html_url }} 
           # Value to put into the System.Description field
-          description: ${{ github.event.body }}
+          description: ${{ github.event.release.body }}
           # Area Path for the work item e.g. "MyProject\MyArea"
           # areaPath: # optional
           # Iteration Path for the work item e.g. "MyProject\Iteration 1"
